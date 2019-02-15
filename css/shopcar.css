@@ -1,0 +1,25 @@
+.searchlist{width: 1200px;margin: 0 auto;overflow:hidden ;position: relative;}
+.searchlist .logolist{float: left;width: 238px;margin-top: 12px;text-align: center;}
+.searchlist .logolist h1{font-size: 14px;color: #000000;}
+.searchlist .logolist{float: left}
+.searchlist .step{float: right;position: absolute;right: 0;bottom: 20px;}
+
+.shopcar_box{margin:0 auto 20px;overflow: hidden;border-bottom: 1px solid #999999;}
+.shopcar_item{margin: 10px auto 10px;overflow: hidden;height: 30px;line-height: 30px;width: 1200px;}
+.shopcar_item h1,.shopcar_item h2,.shopcar_item input,.shopcar_item p{float: left;}
+.shopcar_item input{border: 1px solid #999999;height: 28px;margin-right: 10px;}
+.shopcar_item h2{padding-left: 10px;}
+.shopcar_index{clear:both;border: 1px solid #999;background: #ECECEC;overflow: hidden;width: 1200px;margin: 0 auto 20px;}
+
+#shopcar_title{height: 30px;background: #679801;line-height: 30px;}
+#shopcar_title p{float: left;color: #FFFDEF;width: 100px;margin-right: 5px;padding-left: 8px;}
+#shopcar_title p:nth-child(2){width: 280px;}
+
+#shopcar_con{overflow: hidden;margin: 20px auto;}
+#shopcar_con p{width: 30px;height:30px;border: 1px solid #000000;float:left;color: #000000;}
+#shopcar_con p{float: left;width: 100px;margin-right: 10px;}
+#shopcar_con .t_item{width: 280px;}
+
+#clearBox{width: 1200px;margin: 0 auto;margin-bottom: 20px;overflow: hidden;}
+#clearBox input{width: 80px;height: 30px;text-align: center;border: 1px solid #000000;float: left;margin-right: 10px;cursor: pointer;}
+#clearBox p{float: right;}

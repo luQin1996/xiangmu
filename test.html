@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			li{width:200px;height: 200px;border: 1px solid #000;}
+		</style>
+	</head>
+	<body>
+		<ul class="listkb_ul">
+		</ul>
+	</body>
+</html>
+<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+/*	$.ajax({
+		type:"get",
+		url:"json1.json",
+		async:true,
+		cache:false,
+		dataType:"jsonp",
+		jsonpcallback:fn
+		success:function(res){
+			 var str=""
+            for(var i=0;i<res.list.length;i++){
+                var cur =res.list[i];
+                console.log(cur.name)
+              str+=`<li>
+                		<h4>${cur.name}</h4>
+						<p class="price"> ${cur.price} </p>
+						<img src="img/${cur.src}.jpg"/>
+				</li>`
+          
+            } 
+           $(".listkb_ul").html(str) 
+       }		       
+})   
+*/
+/*$.ajax({
+	type:"get",
+	url:"js/index.json",
+	success:function(msg){
+		console.log(msg);
+	}
+});*/
+
+$.ajax({
+    type:"get",
+    url:"js/index.json",
+    async:"true",
+    cache:"false",
+    success:function(res){
+    	console.log(res)
+        let str="";
+        let arr1=res.cls01; 
+            for(let i=0;i<arr1.list.length;i++){
+                var cur =arr1.list[i];
+                str+=
+                `               
+                <li>
+						<h4>${cur.name}</h4>
+						<p class="price">${cur.price}</p>
+						<img src="img/${cur.src}.jpg"/>
+				</li>`
+            }
+            $(".listkb_ul").html(str)
+        }
+       
+})   
+</script>
