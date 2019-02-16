@@ -1,3 +1,8 @@
+// 广告
+$(".gg2").click(function(){
+    $(".gg").parent().remove();
+    $(this).remove();
+})
 // header选择地图
 var provArr = ["辽宁","山西","河北","湖北","湖南","广东","北京","陕西","山东","福建",];
 var cityArr = [
@@ -71,21 +76,7 @@ function scrollNews(obj){
    })
 }
 
-//轮播图左侧导航
-$(".index_lf li").hover(function(){
-		$(this).css({'background':"#fff"});
-		$(".ft").find("a").css({"color":" #76ac25"})
-		$(".hide_box").css({"display":"block"})
-	},function(){
-		$(this).css({'background':" #76ac25"});
-		$(".ft").find("a").css({"color":" #fff"})
-		$(".hide_box").css({"display":"none"})
-	})
 
-$("#close").click(function(){
-	$(".hide_box").css({"display":"none"})
-	$(".index_lf li").css({'background':" #76ac25"})
-})
 
 
 //侧边栏
@@ -235,3 +226,47 @@ $.ajax({
             })
     }
 }) 
+// 轮播图左侧导航
+$(".meta dl").hover(function(){
+    $(this).css("background","#fff");
+    $(this).css("color","#76ab25");
+    $(".hide_box").css("display","block");
+},function(){
+    $(this).css("background","#76ab25");
+    $(this).css("color","#fff");
+    $(".hide_box").css("display","none");
+})
+//顶部导航
+$("aside ul li").eq(0).nextAll().hover(function(){
+    $(this).css("color","#76ab25")
+},function(){
+    $(this).css("color","#000")
+})
+//轮播图
+var index_lun = 0;
+	var timer_lun = null;
+	var list_lun  = $(".wrapper ul li");
+	var page_lun = $(".wrapper ol li");
+	timer_lun = setInterval(autoPlay,1500)
+	function autoPlay(){
+		index_lun++;
+		if(index_lun == page_lun.length){
+			index_lun = 0;
+		}
+		list_lun.eq(index_lun).fadeIn(1000).siblings().fadeOut(1000);
+		page_lun.eq(index_lun).addClass("current").siblings().removeClass("current");
+	}
+	$(".wrapper").mouseenter(function(){
+		clearInterval(timer_lun);
+    })
+    $(".wrapper").mouseleave(function(){
+        timer_lun=setInterval(autoPlay,1500)
+    })
+	page_lun.mouseenter(function(){
+		clearInterval(timer_lun);
+		index_lun = $(this).index() - 1;
+		autoPlay();
+	})
+	page_lun.mouseleave(function(){
+		timer_lun=setInterval(autoPlay,1500)
+	})
